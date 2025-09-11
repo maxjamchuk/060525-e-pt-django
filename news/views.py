@@ -5,7 +5,9 @@ from django.shortcuts import render
 info = {
     'users_count': 100500,
     'news_count': 1000,
+    'menu': ['Главная', 'О проекте', 'Каталог']
 }
+
 
 def main(request):
     return HttpResponse('Hello world!')  # вернёт страничку с надписью 'Hello world!'

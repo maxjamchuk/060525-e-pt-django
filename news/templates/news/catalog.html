@@ -1,13 +1,40 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Каталог</title>
   </head>
+
+  <!--  Добавим семантики. Header,-->
+  <header>
+    <!-- Цикл шаблона Django, обходим menu и формируем элементы списка в nav-->
+        <nav>
+            <ul>  <!-- unmarked list -->
+                {% for item in menu %}
+                    <li>{{ item }}</li>  <!-- list item -->
+                {% endfor %}
+            </ul>
+        </nav>
+        <!-- Комментарии в шаблоне Django -->
+        {% comment %}
+          <nav>
+              <ul>
+                      <li>{{ menu.0 }}</li>
+                      <li>{{ menu.1 }}</li>
+                      <li>{{ menu.2 }}</li>
+              </ul>
+          </nav>
+        {% endcomment %}
+  </header>
   <body>
-    <h1>Каталог новостей</h1>
-    <p>Всего новостей: {{ news_count }}</p>
-    <p>Всего пользователей: {{ users_count }}</p>
+    <div>
+        <h1>Каталог карточек</h1>
+        <p>Всего новостей: {{ news_count }}</p>
+        <p>Всего пользователей: {{ users_count }}</p>
+        <p>Список {{ menu }}</p>
+    </div>
   </body>
 </html>
