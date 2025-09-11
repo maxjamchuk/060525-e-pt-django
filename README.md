@@ -87,3 +87,12 @@ def news_detail(request, news_id):
 4. Зарегистрировали маршруты без префикса `news/` в файле `urls.py` приложения `news`
 
 **commit: `Урок 2: собственный urls.py в news и функция include`**
+
+### Знакомство с Django Templates (Шаблоны)
+1. Создали папку `templates` в директории приложения `news`
+2. Создали папку `news` в директории `news/templates`
+3. Создали файл `catalog.html` в директории `news/templates/news`
+4. Переписали функцию `get_all_news` в файле `views.py` так, чтобы она возвращала страницу `catalog.html`
+используя функцию `render` из модуля `django.shortcuts`
+
+**commit: `Урок 2: рендер первого шаблона`**

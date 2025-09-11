@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def main(request):
@@ -10,7 +11,7 @@ def info(request):
 
 
 def get_all_news(request):
-    return HttpResponse('<h1>Все новости</h1>')
+    return render(request, 'news/catalog.html')
 
 
 def faq(request):
