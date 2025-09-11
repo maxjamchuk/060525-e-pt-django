@@ -96,3 +96,16 @@ def news_detail(request, news_id):
 используя функцию `render` из модуля `django.shortcuts`
 
 **commit: `Урок 2: рендер первого шаблона`**
+
+### Работа с шаблоном 
+1. Создали словарь с данными в `views.py` и передали его в шаблон
+```python
+info = {
+    "users_count": 100600,
+    "news_count": 1000,
+}
+```
+2. Передали данные в представление `get_all_news` через параметр `context`
+3. Вставили данные в шаблон `catalog.html` с помощью шаблонного языка `Django Template Language` (`DTL`)
+
+**commit: `Урок 2: передаём первые данные в шаблон`*

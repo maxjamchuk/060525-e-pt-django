@@ -2,16 +2,21 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
+info = {
+    'users_count': 100500,
+    'news_count': 1000,
+}
+
 def main(request):
     return HttpResponse('Hello world!')  # вернёт страничку с надписью 'Hello world!'
 
 
-def info(request):
+def about(request):
     return HttpResponse('information page')
 
 
 def get_all_news(request):
-    return render(request, 'news/catalog.html')
+    return render(request, 'news/catalog.html', context=info)
 
 
 def faq(request):
