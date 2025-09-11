@@ -12,7 +12,7 @@ info = {
         {"title": "О проекте",
          "url": "/about/"},
         {"title": "Каталог",
-         "url": "/news/"},
+         "url": "/news/catalog"},
     ]
 }
 
@@ -23,6 +23,14 @@ def main(request):
 
 def about(request):
     return HttpResponse('information page')
+
+
+def catalog(request):
+    return HttpResponse('Каталог новостей')
+
+
+def get_category_by_name(request, slug):
+    return HttpResponse(f"Категория {slug}")
 
 
 def get_all_news(request):
