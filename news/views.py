@@ -2,10 +2,18 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
+
 info = {
-    'users_count': 100500,
-    'news_count': 1000,
-    'menu': ['Главная', 'О проекте', 'Каталог']
+    "users_count": 100600,
+    "news_count": 1000,
+    "menu": [
+        {"title": "Главная",
+         "url": "/"},
+        {"title": "О проекте",
+         "url": "/about/"},
+        {"title": "Каталог",
+         "url": "/news/"},
+    ]
 }
 
 

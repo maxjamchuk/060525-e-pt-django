@@ -14,30 +14,24 @@
         <nav>
             <ul>  <!-- unmarked list -->
                 {% for item in menu %}
-                    <li>{{ item }}</li>  <!-- list item -->
+                    <li>
+                        <a href="{{ item.url }}">
+                          {{ item.title }}
+                        </a>
+                    </li>  <!-- list item -->
                     {% if not forloop.last %}
                         <hr>  <!-- horizontal rule -->
                     {% endif %}
                 {% endfor %}
             </ul>
         </nav>
-        <!-- Комментарии в шаблоне Django -->
-        {% comment %}
-          <nav>
-              <ul>
-                      <li>{{ menu.0 }}</li>
-                      <li>{{ menu.1 }}</li>
-                      <li>{{ menu.2 }}</li>
-              </ul>
-          </nav>
-        {% endcomment %}
   </header>
+
   <body>
     <div>
-        <h1>Каталог карточек</h1>
+        <h1>Каталог новостей</h1>
         <p>Всего новостей: {{ news_count }}</p>
         <p>Всего пользователей: {{ users_count }}</p>
-        <p>Список {{ menu }}</p>
     </div>
   </body>
 </html>
