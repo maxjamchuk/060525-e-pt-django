@@ -1,37 +1,21 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html lang="en">
+{% comment %} Этот шаблон расширяет базовый шаблон base.html {% endcomment %}
+{% comment %} news/templates/news/catalog.html {% endcomment %}
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Каталог</title>
-  </head>
+{% block title %}
+    Каталог новостей Info to Go
+{% endblock %}
 
-  <!--  Добавим семантики. Header,-->
-  <header>
-    <!-- Цикл шаблона Django, обходим menu и формируем элементы списка в nav-->
-        <nav>
-            <ul>  <!-- unmarked list -->
-                {% for item in menu %}
-                    <li>
-                        <a href="{{ item.url }}">
-                          {{ item.title }}
-                        </a>
-                    </li>  <!-- list item -->
-                    {% if not forloop.last %}
-                        <hr>  <!-- horizontal rule -->
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </nav>
-  </header>
-
-  <body>
-    <div>
-        <h1>Каталог новостей</h1>
-        <p>Всего новостей: {{ news_count }}</p>
-        <p>Всего пользователей: {{ users_count }}</p>
-    </div>
-  </body>
-</html>
+{% block content %}
+  <h1>Каталог новостей Info to Go</h1>
+  <p>Всего новостей: {{ news_count }}</p>
+  <p>Всего пользователей: {{ users_count }}</p>
+    <ul>
+        {% for article in news %}
+            <li>
+                {% include "include/article_preview.html" %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
