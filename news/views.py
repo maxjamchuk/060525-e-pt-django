@@ -18,7 +18,10 @@ info = {
 
 
 def main(request):
-    return HttpResponse('Hello world!')  # вернёт страничку с надписью 'Hello world!'
+    """
+    Представление рендерит шаблон templates/base.html
+    """
+    return render(request, 'base.html')
 
 
 def about(request):
