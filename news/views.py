@@ -166,7 +166,17 @@ def faq(request):
     return HttpResponse('Список вопросов и ответов')
 
 
-def get_news_by_id(request, news_id):
-    if news_id > 10:
-        return HttpResponse('Такой новости нет', status=404)
-    return HttpResponse(f'Вы открыли новость #{news_id}')  # Вернёт страницу с надписью Вы открыли новость
+def get_detail_article_by_id(request, article_id):
+    """
+    Возвращает детальную информацию по новости для представления
+    """
+    article = None
+    for a in news_dataset:
+        if a['id_article'] == article_id:
+            article = a
+            break
+    info['article'] = article
+
+    if article:
+        return render(request, 'news/article_detail.html', context=info)
+    return HttpResponse('Статья не найдена', status=404)
