@@ -19,9 +19,9 @@ info = {
 
 def main(request):
     """
-    Представление рендерит шаблон templates/base.html
+    Представление рендерит шаблон templates/main.html
     """
-    return render(request, 'base.html')
+    return render(request, 'main.html')
 
 
 def about(request):
